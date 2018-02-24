@@ -13,7 +13,7 @@ db.once('open', function() {
 
 var catSchema = mongoose.Schema({
   name: String,
-  email: String,
+  owner: String,
   image: String,
   description:String
 });
