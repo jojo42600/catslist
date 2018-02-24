@@ -12,10 +12,10 @@ db.once('open', function() {
 });
 
 var catSchema = mongoose.Schema({
-  name: Number,
+  name: String,
   email: String,
-  imageUrl: String,
-  adoptM:String
+  image: String,
+  description:String
 });
 
 var Cat = module.exports = mongoose.model('Cat', catSchema);
@@ -23,27 +23,28 @@ var Cat = module.exports = mongoose.model('Cat', catSchema);
 
 var createCat = function(data){
   new Cat({
-    name: data.name,
-    owner: data.email,
-    image: data.imageUrl,
-    description: data.adpotM
+    name: data.name || 'dog',
+    owner: data.email || 'dog',
+    image: data.image || 'dog',
+    description: data.description || 'dog'
     }).save().then(() => console.log("cat created"));
 }
 
 
 
 var showCats = function(callback) {
-  Cat.find( function(err, items) {
+  Cat.find( function(err, cats) {
     if(err) {
       callback(err, null);
     } else {
-      callback(null, items);
+      callback(null, cats);
     }
-  });
+  }).limit(8)
 };
 
 
 module.exports.createCat = createCat;
+module.exports.showCats = showCats;
 
 
 
