@@ -1,0 +1,31 @@
+{
+  "name": "catslist",
+  "version": "1.0.0",
+  "description": "List your cats, lend your cats, borrow others' cats",
+  "author": "Hack Reactor <curriculum.team@hackreactor.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "nodemon --inspect Server/server.js",
+    "build": "babel client/src --out-dir dist --presets=es2015,react --ignore=node_modules,client/dist --source-maps inline"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-cli": "6.26.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.0",
+    "jquery": "^3.1.1",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.8.6",
+    "node": "^9.5.0",
+    "path": "^0.12.7",
+    "react": "^16.2.0",
+    "react-dom": "^15.4.2"
+  }
+}
+
+
