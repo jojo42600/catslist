@@ -1,14 +1,63 @@
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
 
 var catEntry = function (_React$Component) {
   _inherits(catEntry, _React$Component);
@@ -45,8 +94,9 @@ var catEntry = function (_React$Component) {
       var _this2 = this;
 
       return React.createElement(
-        'div',
-        { className: 'catEntry' },
+        'div', {
+          className: 'catEntry'
+        },
         React.createElement(
           'h1',
           null,
@@ -64,7 +114,8 @@ var catEntry = function (_React$Component) {
               name: 'name',
               type: 'string',
               value: "this.state.name",
-              onChange: this.handleInputChange })
+              onChange: this.handleInputChange
+            })
           ),
           React.createElement(
             'label',
@@ -75,7 +126,8 @@ var catEntry = function (_React$Component) {
               name: 'email',
               type: 'string',
               value: "this.state.email",
-              onChange: this.handleInputChange })
+              onChange: this.handleInputChange
+            })
           ),
           React.createElement(
             'label',
@@ -86,7 +138,8 @@ var catEntry = function (_React$Component) {
               name: 'image',
               type: 'string',
               value: "this.state.image",
-              onChange: this.handleInputChange })
+              onChange: this.handleInputChange
+            })
           ),
           React.createElement(
             'label',
@@ -95,13 +148,15 @@ var catEntry = function (_React$Component) {
             React.createElement('br', null),
             React.createElement('textarea', {
               value: "this.state.description",
-              onChange: this.handleInputChange })
+              onChange: this.handleInputChange
+            })
           ),
           React.createElement(
-            'button',
-            { onClick: function onClick() {
+            'button', {
+              onClick: function onClick() {
                 return _this2.onSubmit();
-              } },
+              }
+            },
             ' Add Cat'
           )
         )

@@ -22,15 +22,13 @@ db.collection('cats').drop();
 
 
 //creates new collection of cats with data loated in data.json
-var docs = fs.readFile('data.json', 'utf8', function (err, data){
+var docs = fs.readFile('data.json', 'utf8', function (err, data) {
   var cats = db.collection('cats');
   console.log(data)
-  cats.insert(JSON.parse(data), function(err, docs) {
-    cats.count(function(err, count){
+  cats.insert(JSON.parse(data), function (err, docs) {
+    cats.count(function (err, count) {
       console.log(count + "[" + data + "]");
       db.close();
     });
   });
 });
-
-

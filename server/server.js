@@ -6,7 +6,7 @@ var cats = require('../database/index.js');
 var app = express();
 
 
- app.use(express.static(__dirname + '/../dist'));
+app.use(express.static(__dirname + '/../dist'));
 
 
 
@@ -14,8 +14,8 @@ var app = express();
 
 //api call to display cats
 app.get('/api/displayCats', function (req, res) {
-  cats.showCats(function(err, data) {
-    if(err) {
+  cats.showCats(function (err, data) {
+    if (err) {
       res.sendStatus(500);
     } else {
       res.json(data);
@@ -24,7 +24,7 @@ app.get('/api/displayCats', function (req, res) {
 });
 
 //api call to create a new cat with body data
-app.post('/api/newCatListing', function (req, res){
+app.post('/api/newCatListing', function (req, res) {
   cats.createCat(req.body);
   console.log(req.body)
   res.sendStatus(200);
@@ -34,6 +34,6 @@ app.post('/api/newCatListing', function (req, res){
 
 
 
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log('listening on port 3000!');
 });

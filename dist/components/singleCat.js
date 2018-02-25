@@ -1,4 +1,3 @@
-
 /*const singleCat = (props) => (
   <div>
   <img src={this.props.image}>
