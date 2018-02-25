@@ -10,13 +10,13 @@ class App extends React.Component {
       image:'',
       description:'',
       cats:[],
-      lendCatView:true
+      lendCatView:"true"
     };
 
 
   }
 
-
+// to fetch data to populate cats upon load
   componentDidMount(){
 
   fetch('/api/displayCats')
@@ -25,6 +25,7 @@ class App extends React.Component {
 
   }
 
+// toggles to switch pages based upon a true or false state
   setBorrow(){
     this.setState({lendCatView:false});
   }
@@ -34,15 +35,15 @@ class App extends React.Component {
   }
 
 
-
+//could not get toggle to work, if statements and are tricky
    render () {
     return (
     <div className="catEntry">
-    <button onClick={() => this.setBorrow()}> Borrow a Cat</button>
-    <button onClick={() => this.setLend()}> Lend a Cat</button>
-
-    <window.catList />
-
+      <button onClick={() => this.setBorrow()}> Borrow a Cat</button>
+      <button onClick={() => this.setLend()}> Lend a Cat</button>
+      <div className="box">
+      <window.catList />
+      </div>
 
     </div>
     )

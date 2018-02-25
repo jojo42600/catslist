@@ -6,7 +6,14 @@
 
 ************************************
 
-YOU MUST FILL THIS SECTION OUT BEFORE SUBMITTING YOUR WORK.
+open command line terminal
+navigate to project folder
+run npm install
+run npm build
+run npm start
+navigate to http://localhost:3000/
+
+App has started
 
 ************************************
 

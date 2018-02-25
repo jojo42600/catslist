@@ -20,18 +20,18 @@ var catSchema = mongoose.Schema({
 
 var Cat = module.exports = mongoose.model('Cat', catSchema);
 
-
+// add new item to database
 var createCat = function(data){
   new Cat({
-    name: data.name || 'dog',
-    owner: data.email || 'dog',
-    image: data.image || 'dog',
-    description: data.description || 'dog'
+    name: data.name,
+    owner: data.email,
+    image: data.image,
+    description: data.description
     }).save().then(() => console.log("cat created"));
 }
 
 
-
+//retreive a list of 20 from database
 var showCats = function(callback) {
   Cat.find( function(err, cats) {
     if(err) {
@@ -39,7 +39,7 @@ var showCats = function(callback) {
     } else {
       callback(null, cats);
     }
-  }).limit(8)
+  }).limit(20)
 };
 
 

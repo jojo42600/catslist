@@ -9,19 +9,20 @@ class borrowCats extends React.Component {
     };
   }
 
-
+//attempted to pull the data from cats and post it own as a list
+// so I could then start playing around with it in CSS
 
 
   render(){
     return(
      <div className="borrowCats">
-     this.state.cats.map((cat) =>
+     {this.state.cats.map((cat) =>
       <li key={cat._key}>
-      {cat.name}
-      {cat.owner}
+      name {cat.name}
+      owner {cat.owner}
       {cat.description}
-      {cat.image}
-      </li>)
+      Cute Cat pic {cat.image}
+      </li>)}
 
 
      </div>

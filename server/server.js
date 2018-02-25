@@ -12,7 +12,7 @@ var app = express();
 
 
 
-
+//api call to display cats
 app.get('/api/displayCats', function (req, res) {
   cats.showCats(function(err, data) {
     if(err) {
@@ -23,7 +23,7 @@ app.get('/api/displayCats', function (req, res) {
   });
 });
 
-
+//api call to create a new cat with body data
 app.post('/api/newCatListing', function (req, res){
   cats.createCat(req.body);
   console.log(req.body)
