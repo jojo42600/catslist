@@ -10,7 +10,7 @@ class App extends React.Component {
       image:'',
       description:'',
       cats:[],
-      lendCatView:"true"
+      lendCatView:'true'
     };
 
 
@@ -27,22 +27,25 @@ class App extends React.Component {
 
 // toggles to switch pages based upon a true or false state
   setBorrow(){
-    this.setState({lendCatView:false});
+    this.setState({lendCatView:'false'});
   }
 
   setLend(){
-    this.setState({lendCatView:true});
+    this.setState({lendCatView:'true'});
   }
 
 
 //could not get toggle to work, if statements and are tricky
    render () {
+
     return (
     <div className="catEntry">
       <button onClick={() => this.setBorrow()}> Borrow a Cat</button>
       <button onClick={() => this.setLend()}> Lend a Cat</button>
       <div className="box">
-      <window.catList />
+      { this.state.lendCatView === 'true' && <window.catList /> }
+      { this.state.lendCatView === 'false' && <window.borrowCats cats={this.state.cats}/>}
+
       </div>
 
     </div>

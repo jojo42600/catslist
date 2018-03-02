@@ -1,10 +1,12 @@
 
-/*const singleCat = (props) => (
-  <div>
-  <img src={this.props.image}>
-  <h1>{this.props.name}</h1>
-  <a href="#">{this.props.email}</a>
-  <p>{this.props.description}</p>
+const singleCat = ({cat}) => (
+
+  <div className="singleCat">
+  <img src={cat.image} />
+  <h1>{cat.name}</h1>
+  <a href="#">{cat.owner}</a>
+  <h5>{cat.description}</h5>
+
 
   </div>
 
@@ -12,4 +14,3 @@
 
 window.singleCat = singleCat;
 
-*/

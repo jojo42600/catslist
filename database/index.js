@@ -24,7 +24,7 @@ var Cat = module.exports = mongoose.model('Cat', catSchema);
 var createCat = function (data) {
   new Cat({
     name: data.name,
-    owner: data.email,
+    owner: data.owner,
     image: data.image,
     description: data.description
   }).save().then(() => console.log("cat created"));
