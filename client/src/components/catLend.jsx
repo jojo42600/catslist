@@ -1,7 +1,7 @@
 
 
 
-class catList extends React.Component {
+class CatLend extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,7 +9,6 @@ class catList extends React.Component {
       owner: '',
       image:'',
       description:'',
-      lendCatView:'true',
     };
 
 //bind functions so they may be used as they are intended in app component
@@ -38,7 +37,7 @@ class catList extends React.Component {
     };
 //trouble using ajax, not sure why, I have only played around with webpack and have no expereince without it sure has proven tough today except for earlier sprints.
     $.ajax({
-      url: '/api/newCatListing',
+      url: '/api/cats',
       type: 'POST',
       data: kitty,
       success: function(data) {
@@ -61,7 +60,7 @@ class catList extends React.Component {
 //forms and form data
   render () {
     return (
-    <div className="catList">
+    <div className="catLend">
       <h1> List a cat to lend </h1>
 
       <form>
@@ -107,4 +106,4 @@ class catList extends React.Component {
 }
 
 
-window.catList = catList;
+window.CatLend = CatLend;

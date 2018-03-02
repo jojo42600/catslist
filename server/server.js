@@ -7,15 +7,17 @@ var app = express();
 
 
 app.use(express.static(__dirname + '/../dist'));
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
 
-app.get('/', function(req, res){
+app.get('/', function (req, res) {
   res.redirect('index.html')
 })
 
 
 //api call to display cats
-app.get('/api/displayCats', function (req, res) {
+app.get('/api/cats', function (req, res) {
   cats.showCats(function (err, data) {
     if (err) {
       res.sendStatus(500);
@@ -26,9 +28,9 @@ app.get('/api/displayCats', function (req, res) {
 });
 
 //api call to create a new cat with body data
-app.post('/api/newCatListing', function (req, res) {
+app.post('/api/cats', function (req, res) {
   cats.createCat(req.body);
-  res.sendStatus(200);
+  res.sendStatus(201);
 })
 
 

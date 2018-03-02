@@ -1,4 +1,4 @@
-var borrowCats = ({cats}) => (
+var BorrowCats = ({cats}) => (
 
   <div className="borrowCats">
     {cats.map((cat) =>
@@ -10,4 +10,4 @@ var borrowCats = ({cats}) => (
   </div>
 );
 
-window.borrowCats = borrowCats
+window.BorrowCats = BorrowCats
